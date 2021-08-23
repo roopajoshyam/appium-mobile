@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-23T06:44:14Z" name="com.appium.mobile.runner.CucumberTest" finished-at="2021-08-23T06:44:32Z" duration-ms="18433">
+    <groups>
+    </groups>
+    <test started-at="2021-08-23T06:44:14Z" name="Command line test" finished-at="2021-08-23T06:44:32Z" duration-ms="18433">
+      <class name="com.appium.mobile.runner.CucumberTest">
+        <test-method is-config="true" signature="launchTest()[pri:0, instance:com.appium.mobile.runner.CucumberTest@635eaaf1]" started-at="2021-08-23T06:44:14Z" name="launchTest" finished-at="2021-08-23T06:44:14Z" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchTest -->
+        <test-method signature="login(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.appium.mobile.runner.CucumberTest@635eaaf1]" started-at="2021-08-23T06:44:14Z" name="login" description="Apps" data-provider="Feature" finished-at="2021-08-23T06:44:32Z" duration-ms="17743" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AppiumTest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="report()[pri:0, instance:com.appium.mobile.runner.CucumberTest@635eaaf1]" started-at="2021-08-23T06:44:32Z" name="report" finished-at="2021-08-23T06:44:32Z" duration-ms="353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+      </class> <!-- com.appium.mobile.runner.CucumberTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.appium.mobile.runner.CucumberTest -->
+</testng-results>

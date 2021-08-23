@@ -1,0 +1,98 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 9018220925,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepdefs.setup()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Login to RN app",
+        "description": "",
+        "id": "appiumtest;login-to-rn-app",
+        "after": [
+          {
+            "result": {
+              "duration": 3078080649,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyStepdefs.stop()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 898374598,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Select login button",
+            "match": {
+              "location": "MyStepdefs.SelectLoginButton()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2167346499,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Input username and password",
+            "match": {
+              "location": "MyStepdefs.inputUsernameAndPassword()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 960456130,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Click on login",
+            "match": {
+              "location": "MyStepdefs.ClickOnLoginButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1317886773,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Verify login",
+            "match": {
+              "location": "MyStepdefs.verifyLogin()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "AppiumTest",
+    "description": "",
+    "id": "appiumtest",
+    "keyword": "Feature",
+    "uri": "login.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@appium"
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [com.appium.mobile.runner.CucumberTest]" verbose="0">
+  <test thread-count="5" name="Command line test(failed)" verbose="0">
+    <classes>
+      <class name="com.appium.mobile.runner.CucumberTest">
+        <methods>
+          <include name="report"/>
+          <include name="launchTest"/>
+          <include name="login" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.appium.mobile.runner.CucumberTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [com.appium.mobile.runner.CucumberTest] -->
