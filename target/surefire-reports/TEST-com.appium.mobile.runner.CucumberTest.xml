@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.appium.mobile.runner.CucumberTest" time="17.745" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.appium.mobile.runner.CucumberTest" time="14.195" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="cucumber.options" value="--tags @appium"/>
     <property name="java.vm.version" value="11.0.1+13"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib"/>
     <property name="gopherProxySet" value="false"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/roopa.j/Downloads/Appium-mobile"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/roopa.j/Automation/Appium-mobile"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/roopa.j/Downloads/Appium-mobile"/>
+    <property name="user.dir" value="/Users/roopa.j/Automation/Appium-mobile"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.1+13"/>
     <property name="runSuite" value="CucumberTests.class"/>
@@ -66,5 +66,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.appium.mobile.runner.CucumberTest" name="login" time="17.745"/>
+  <testcase classname="com.appium.mobile.runner.CucumberTest" name="login" time="14.195"/>
 </testsuite>

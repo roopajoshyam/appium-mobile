@@ -41,15 +41,17 @@ public class Capabilities extends DesiredCapabilities {
         capabilities.setCapability("deviceName", "d7c45d58");
         capabilities.setCapability("appPackage", "com.rn_app");
         capabilities.setCapability("appActivity", "com.rn_app.MainActivity");
+//        capabilities.setCapability("app", System.getenv("BITRISE_APK_PATH"));
         capabilities.setCapability("automationName", "UiAutomator2");
-        service = AppiumDriverLocalService
-                .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File("/usr/local/bin/node"))
-                        .withAppiumJS(new File("/Users/roopa.j/.nvm/versions/node/v12.14.1/bin/appium")).withIPAddress("0.0.0.0")
-                        .usingPort(4727).withLogFile(new File("/tmp/AppiumLogs.txt")));
-        service.start();
-        String service_url = service.getUrl().toString();
-        System.out.println("Appium Service Address: " + service_url);
-        androidDriver = new AndroidDriver(new URL(service_url), capabilities);
+//        service = AppiumDriverLocalService
+//                .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File("/usr/local/bin/node"))
+//                        .withAppiumJS(new File("/Users/roopa.j/.nvm/versions/node/v12.14.1/bin/appium")).withIPAddress("0.0.0.0")
+//                        .usingPort(4727).withLogFile(new File("/tmp/AppiumLogs.txt")));
+//        service.start();
+//        String service_url = service.getUrl().toString();
+//        System.out.println("Appium Service Address: " + service_url);
+//        androidDriver = new AndroidDriver(new URL(service_url), capabilities)
+        androidDriver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), capabilities);
         androidDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return androidDriver;
     }
@@ -77,7 +79,8 @@ public class Capabilities extends DesiredCapabilities {
     }
 
     public void stopServer() {
-        service.stop();
+
+//        service.stop();
     }
 
 }

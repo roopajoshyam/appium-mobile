@@ -13,7 +13,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 9018220925,
+  "duration": 8502094211,
   "status": "passed"
 });
 formatter.scenario({
@@ -48,32 +48,32 @@ formatter.match({
   "location": "MyStepdefs.SelectLoginButton()"
 });
 formatter.result({
-  "duration": 898374598,
+  "duration": 1042101803,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepdefs.inputUsernameAndPassword()"
 });
 formatter.result({
-  "duration": 2167346499,
+  "duration": 2258955590,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepdefs.ClickOnLoginButton()"
 });
 formatter.result({
-  "duration": 960456130,
+  "duration": 847629408,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStepdefs.verifyLogin()"
 });
 formatter.result({
-  "duration": 1317886773,
+  "duration": 1289110434,
   "status": "passed"
 });
 formatter.after({
-  "duration": 3078080649,
+  "duration": 24262,
   "status": "passed"
 });
 });
