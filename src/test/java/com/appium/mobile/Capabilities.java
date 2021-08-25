@@ -37,11 +37,12 @@ public class Capabilities extends DesiredCapabilities {
     protected AppiumDriver<MobileElement> preparation() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "11");
-        capabilities.setCapability("deviceName", "d7c45d58");
-        capabilities.setCapability("appPackage", "com.rn_app");
-        capabilities.setCapability("appActivity", "com.rn_app.MainActivity");
-//        capabilities.setCapability("app", System.getenv("BITRISE_APK_PATH"));
+        capabilities.setCapability("platformVersion", "10");
+        capabilities.setCapability("deviceName", System.getenv("BITRISE_EMULATOR_SERIAL"));
+//        capabilities.setCapability("deviceName", "d7c45d58");
+//        capabilities.setCapability("appPackage", "com.rn_app");
+//        capabilities.setCapability("appActivity", "com.rn_app.MainActivity");
+        capabilities.setCapability("app", System.getenv("BITRISE_APK_PATH"));
         capabilities.setCapability("automationName", "UiAutomator2");
 //        service = AppiumDriverLocalService
 //                .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File("/usr/local/bin/node"))
