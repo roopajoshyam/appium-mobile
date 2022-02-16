@@ -3,17 +3,15 @@ package com.appium.mobile;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
+//import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.remote.MobilePlatform;
+import io.testproject.sdk.drivers.android.AndroidDriver;
+import io.testproject.sdk.drivers.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.io.File;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -25,36 +23,50 @@ public class Capabilities extends DesiredCapabilities {
     private static ExtentHtmlReporter htmlReporter;
     static String Createdreport;
     private static SimpleDateFormat calendarDate;
+    public static AndroidDriver androidDriver;
+    public static IOSDriver iosDriver;
 
     public AppiumDriver<MobileElement> setupDriver() throws Exception {
-        appiumDriver = preparation();
+        appiumDriver = Capabilities.StartAndroidServer();
+//        appiumDriver = Capabilities.StartIOSServer();
 
         return appiumDriver;
     }
 
-    protected AndroidDriver androidDriver;
-    private AppiumDriverLocalService service;
-    protected AppiumDriver<MobileElement> preparation() throws Exception {
+    public static AppiumDriver<MobileElement> StartAndroidServer() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "10");
-        capabilities.setCapability("deviceName", System.getenv("BITRISE_EMULATOR_SERIAL"));
-//        capabilities.setCapability("deviceName", "d7c45d58");
-//        capabilities.setCapability("appPackage", "com.rn_app");
-//        capabilities.setCapability("appActivity", "com.rn_app.MainActivity");
-        capabilities.setCapability("app", System.getenv("BITRISE_APK_PATH"));
-        capabilities.setCapability("automationName", "UiAutomator2");
-//        service = AppiumDriverLocalService
-//                .buildService(new AppiumServiceBuilder().usingDriverExecutable(new File("/usr/local/bin/node"))
-//                        .withAppiumJS(new File("/Users/roopa.j/.nvm/versions/node/v12.14.1/bin/appium")).withIPAddress("0.0.0.0")
-//                        .usingPort(4727).withLogFile(new File("/tmp/AppiumLogs.txt")));
-//        service.start();
-//        String service_url = service.getUrl().toString();
-//        System.out.println("Appium Service Address: " + service_url);
-//        androidDriver = new AndroidDriver(new URL(service_url), capabilities)
-        androidDriver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), capabilities);
+
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
+        capabilities.setCapability(MobileCapabilityType.UDID, "d7c45d58"); //RZ8N71L331Y
+        capabilities.setCapability("appPackage", "com.rn_app");
+        capabilities.setCapability("appActivity", "com.rn_app.MainActivity");
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
+        capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+//        capabilities.setCapability(MobileCapabilityType.ACCEPT_SSL_CERTS, false);
+//        capabilities.setCapability("appium:INSTALL_GRANT_RUNTIME_PERMISSIONS", "true");
+        androidDriver = new AndroidDriver<>("dzNeCACvT9CFsRV5qo4P6ZNe54Zp1NA065V7GTEc3v41", capabilities, "RNApp", "CodedTest");
+        System.out.println("success---------");
         androidDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return androidDriver;
+    }
+
+    public static AppiumDriver<MobileElement> StartIOSServer() throws Exception {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.IOS);
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12.2");
+        capabilities.setCapability("useNewWDA", "true");
+        capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/app/rn_app_3.app");
+        capabilities.setCapability(MobileCapabilityType.UDID, "DB8EAE04-9810-4ADE-8093-76C8E03621D4");
+
+//        iosDriver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        iosDriver = new IOSDriver<>("dzNeCACvT9CFsRV5qo4P6ZNe54Zp1NA065V7GTEc3v41", capabilities);
+        System.out.println("success---------");
+        iosDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        return iosDriver;
     }
 
     public static ExtentReports createTestResult(String fileName) {
@@ -79,9 +91,10 @@ public class Capabilities extends DesiredCapabilities {
         return Capabilities.createTestResult(Createdreport);
     }
 
+//    @AfterSuite
     public void stopServer() {
-
-//        service.stop();
+        androidDriver.quit();
+//        iosDriver.quit();
     }
 
 }

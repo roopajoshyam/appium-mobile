@@ -1,1 +1,5 @@
-com/appium/mobile/runner/CucumberTest.class
+com/appium/mobile/CapabilitiesOld.class
+com/appium/mobile/pages/SignUp.class
+com/appium/mobile/runner/JunitRunnerTest.class
+com/appium/mobile/stepDefinitions/MyStepdefs.class
+com/appium/mobile/Capabilities.class

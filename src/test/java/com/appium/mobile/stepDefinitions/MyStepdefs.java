@@ -1,14 +1,14 @@
 package com.appium.mobile.stepDefinitions;
 
 import com.appium.mobile.Capabilities;
+import com.appium.mobile.CapabilitiesOld;
 import com.appium.mobile.pages.SignUp;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 
 public class MyStepdefs extends Capabilities {
 
@@ -16,8 +16,10 @@ public class MyStepdefs extends Capabilities {
 
     @Before
     public void setup()throws Exception{
+        System.out.println("Step 0 in setting up driver");
         setupDriver();
     }
+
     @Given("^Input username and password$")
     public void inputUsernameAndPassword() {
         System.out.println("Step 1");
@@ -51,4 +53,5 @@ public class MyStepdefs extends Capabilities {
     public void stop(){
         stopServer();
     }
+
 }
